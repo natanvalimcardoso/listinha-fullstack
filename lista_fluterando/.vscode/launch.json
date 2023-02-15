@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "lista_fluterando",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "lista_fluterando (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}
