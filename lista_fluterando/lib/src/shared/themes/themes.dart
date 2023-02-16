@@ -11,12 +11,13 @@ final lightTheme = ThemeData(
   appBarTheme: AppBarTheme(
     centerTitle: true,
     backgroundColor: _lightColorScheme.primaryContainer,
-foregroundColor: _lightColorScheme.onPrimaryContainer,
+    foregroundColor: _lightColorScheme.onPrimaryContainer,
   ),
   floatingActionButtonTheme: FloatingActionButtonThemeData(
     backgroundColor: _lightColorScheme.primary,
     foregroundColor: _lightColorScheme.onPrimary,
   ),
+  segmentedButtonTheme: _segmentedButtonTheme
 );
 
 final darkTheme = ThemeData(
@@ -31,4 +32,22 @@ final darkTheme = ThemeData(
     backgroundColor: _darkColorScheme.primary,
     foregroundColor: _darkColorScheme.onPrimary,
   ),
+  segmentedButtonTheme:  _segmentedButtonTheme
 );
+
+
+SegmentedButtonThemeData get _segmentedButtonTheme => SegmentedButtonThemeData(
+    style: ButtonStyle(
+      textStyle: MaterialStateProperty.resolveWith(
+        (states) {
+          if (states.contains(MaterialState.selected)) {
+            return const TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.w500
+            );
+          }
+          return const TextStyle(fontSize: 12);
+        },
+      ),
+    ),
+  );
