@@ -9,17 +9,15 @@ class AppWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     Modular.setInitialRoute(RouteConst.homeModule);
-
     return MaterialApp.router(
-      title: 'Flutter Demo',
+      title: 'Flutter Listinha',
       themeMode: ThemeMode.light,
-      debugShowCheckedModeBanner: false,
       theme: lightTheme,
       darkTheme: darkTheme,
-      routerDelegate: Modular.routerDelegate,
+      debugShowCheckedModeBanner: false,
       routeInformationParser: Modular.routeInformationParser,
+      routerDelegate: Modular.routerDelegate,
     );
   }
 }

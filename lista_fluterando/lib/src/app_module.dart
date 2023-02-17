@@ -1,8 +1,8 @@
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:lista_fluterando/src/modules/configuration/configuration_module.dart';
+import 'package:lista_fluterando/src/shared/const/route_const.dart';
 
-import 'modules/configuration/configuration_module.dart';
 import 'modules/home/home_module.dart';
-import 'shared/const/route_const.dart';
 
 class AppModule extends Module {
   @override
@@ -11,7 +11,8 @@ class AppModule extends Module {
   @override
   List<Module> get imports => [];
 
-  List<ModularRoute> get route => [
+  @override
+  List<ModularRoute> get routes => [
         ModuleRoute(
           RouteConst.homeModule,
           module: HomeModule(),

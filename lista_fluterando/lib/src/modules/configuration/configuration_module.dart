@@ -1,5 +1,4 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:lista_fluterando/src/shared/const/route_const.dart';
 
 import 'configuration_page.dart';
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:lista_fluterando/src/modules/home/widgets/custom_drawer_widget.dart';
 import 'package:lista_fluterando/src/shared/const/route_const.dart';
 
@@ -60,7 +61,7 @@ class _HomePageState extends State<HomePage> {
         label: const Text('Nova Lista'),
         icon: const Icon(Icons.edit),
         onPressed: () {
-          Navigator.of(context).pushNamed(RouteConst.edit);
+          Modular.to.pushNamed('.${RouteConst.edit}');
         },
       ),
     );
