@@ -3,7 +3,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:lista_fluterando/src/modules/home/widgets/custom_drawer_widget.dart';
 import 'package:lista_fluterando/src/shared/const/route_const.dart';
 
-import '../../shared/widgets/user_image_button_widget.dart';
+import '../../../shared/widgets/user_image_button_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);

@@ -1,6 +1,6 @@
 import 'package:flutter_modular/flutter_modular.dart';
 
-import 'configuration_page.dart';
+import 'pages/configuration_page.dart';
 
 
 class ConfigurationModule extends Module {

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:lista_fluterando/src/shared/const/route_const.dart';
 
 class CustomDrawerWidget extends StatelessWidget {
   const CustomDrawerWidget({Key? key}) : super(key: key);
@@ -8,8 +10,8 @@ class CustomDrawerWidget extends StatelessWidget {
     return NavigationDrawer(
       onDestinationSelected: (index) {
         if (index == 1) {
-          Navigator.of(context).pop();
-          Navigator.of(context).pushNamed('/config');
+          Modular.to.pop();
+          Modular.to.pushNamed(RouteConst.configModule);
         }
       },
       children: [

@@ -1,8 +1,8 @@
 import 'package:flutter_modular/flutter_modular.dart';
 
 import '../../shared/const/route_const.dart';
-import 'edit_task_board_page.dart';
-import 'home_page.dart';
+import 'pages/edit_task_board_page.dart';
+import 'pages/home_page.dart';
 
 class HomeModule extends Module {
   @override
