@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:lista_fluterando/src/modules/home/widgets/custom_drawer_widget.dart';
+import 'package:lista_fluterando/src/shared/const/route_const.dart';
 
-import '../shared/widgets/user_image_button.dart';
+import '../../shared/widgets/user_image_button_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -13,28 +15,13 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: const NavigationDrawer(
-        children: [
-          Padding(
-            padding: EdgeInsets.only(top: 28, right: 16, bottom: 16, left: 16),
-            child: Text('Opções'),
-          ),
-          NavigationDrawerDestination(
-            icon: Icon(Icons.sync),
-            label: Text('Sincronizar'),
-          ),
-          NavigationDrawerDestination(
-            icon: Icon(Icons.settings),
-            label: Text('Configurações'),
-          ),
-        ],
-      ),
+      drawer: const CustomDrawerWidget(),
       appBar: AppBar(
         title: const Text('Listinha'),
         actions: const [
           Padding(
             padding: EdgeInsets.only(right: 8),
-            child: UserImageButton(),
+            child: UserImageButtonWidget(),
           ),
         ],
       ),
@@ -72,7 +59,9 @@ class _HomePageState extends State<HomePage> {
       floatingActionButton: FloatingActionButton.extended(
         label: const Text('Nova Lista'),
         icon: const Icon(Icons.edit),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).pushNamed(RouteConst.edit);
+        },
       ),
     );
   }

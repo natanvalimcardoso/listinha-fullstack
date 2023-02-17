@@ -17,7 +17,7 @@ final lightTheme = ThemeData(
     backgroundColor: _lightColorScheme.primary,
     foregroundColor: _lightColorScheme.onPrimary,
   ),
-  segmentedButtonTheme: _segmentedButtonTheme
+  segmentedButtonTheme: _segmentedButtonTheme,
 );
 
 final darkTheme = ThemeData(
@@ -32,7 +32,7 @@ final darkTheme = ThemeData(
     backgroundColor: _darkColorScheme.primary,
     foregroundColor: _darkColorScheme.onPrimary,
   ),
-  segmentedButtonTheme:  _segmentedButtonTheme
+  segmentedButtonTheme:  _segmentedButtonTheme,
 );
 
 
@@ -43,7 +43,7 @@ SegmentedButtonThemeData get _segmentedButtonTheme => SegmentedButtonThemeData(
           if (states.contains(MaterialState.selected)) {
             return const TextStyle(
               fontSize: 14,
-              fontWeight: FontWeight.w500
+              fontWeight: FontWeight.w500,
             );
           }
           return const TextStyle(fontSize: 12);

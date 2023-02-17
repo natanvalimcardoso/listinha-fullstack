@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class UserImageButton extends StatelessWidget {
-  const UserImageButton({Key? key}) : super(key: key);
+class UserImageButtonWidget extends StatelessWidget {
+  const UserImageButtonWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
