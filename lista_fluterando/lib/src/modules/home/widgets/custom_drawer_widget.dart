@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:lista_fluterando/src/shared/const/route_const.dart';
+import 'package:lista_fluterando/src/shared/controller/app_controller.dart';
 
 class CustomDrawerWidget extends StatelessWidget {
   const CustomDrawerWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final appController = context.watch<AppController>(
+      (controller) => controller.syncDate,
+    );
+     
     return NavigationDrawer(
       onDestinationSelected: (index) {
         if (index == 1) {
