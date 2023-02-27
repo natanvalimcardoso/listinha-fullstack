@@ -1,75 +1,58 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:lista_fluterando/src/shared/controller/app_controller.dart';
 
-class ConfigurationPage extends StatelessWidget {
-  const ConfigurationPage({Key? key}) : super(key: key);
+class ConfigurationPage extends StatefulWidget {
+  const ConfigurationPage({super.key});
 
   @override
+  State<ConfigurationPage> createState() => _ConfigurationPageState();
+}
+
+class _ConfigurationPageState extends State<ConfigurationPage> {
+  @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final size = MediaQuery.of(context).size;
+    final appController = context.watch<AppController>(
+      (store) => store.themeMode,
+    );
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Configuration'),
+        title: const Text('LISTINHA'),
       ),
       body: Padding(
-        padding: EdgeInsets.only(
-          top: size.height * 0.04,
-          left: size.width * 0.04,
-          right: size.width * 0.04,
-        ),
+        padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               'Configurações',
-              style: theme.textTheme.titleLarge?.copyWith(
-                fontWeight: FontWeight.w500,
-                fontSize: 28,
-              ),
+              style: Theme.of(context).textTheme.titleLarge,
             ),
-            SizedBox(
-              height: size.height * 0.04,
-            ),
+            const SizedBox(height: 20),
             Text(
               'Tema',
-              style: theme.textTheme.titleMedium?.copyWith(
-                fontWeight: FontWeight.bold,
-              ),
+              style: Theme.of(context).textTheme.titleMedium,
             ),
-            SizedBox(
-              height: size.height * 0.01,
-            ),
+            const SizedBox(height: 10),
             RadioListTile(
               value: ThemeMode.light,
-              groupValue: ThemeMode.light,
-              title: const Text('Sistema'),
-              onChanged: (mode) {},
-            ),
-            RadioListTile(
-              value: ThemeMode.light,
-              groupValue: ThemeMode.light,
+              groupValue: appController.themeMode.value,
               title: const Text('Claro'),
-              onChanged: (mode) {},
+              onChanged: appController.changeThemeMode,
             ),
             RadioListTile(
-              value: ThemeMode.light,
-              groupValue: ThemeMode.light,
+              value: ThemeMode.dark,
+              groupValue: appController.themeMode.value,
               title: const Text('Escuro'),
-              onChanged: (mode) {},
+              onChanged: appController.changeThemeMode,
             ),
-            SizedBox(
-              height: size.height * 0.04,
-            ),
+            const SizedBox(height: 20),
             Text(
               'Controle de dados',
-              style: theme.textTheme.titleMedium?.copyWith(
-                fontWeight: FontWeight.bold,
-              ),
+              style: Theme.of(context).textTheme.titleMedium,
             ),
-            SizedBox(
-              height: size.height * 0.02,
-            ),
+            const SizedBox(height: 10),
             OutlinedButton(
               onPressed: () {},
               child: const Text('Apagar cache e reiniciar o app'),
