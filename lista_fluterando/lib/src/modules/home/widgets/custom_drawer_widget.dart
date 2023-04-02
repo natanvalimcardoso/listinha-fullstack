@@ -1,24 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:lista_fluterando/src/shared/const/route_const.dart';
-import 'package:lista_fluterando/src/shared/controller/app_controller.dart';
+import 'package:intl/intl.dart';
+import '../../../shared/const/route_const.dart';
+import '../../../shared/controller/app_controller.dart';
 
 class CustomDrawerWidget extends StatelessWidget {
   const CustomDrawerWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final appController = context.watch<AppController>(
+
+    final controller = context.watch<AppController>(
       (controller) => controller.syncDate,
     );
-     
+
+    final date = controller.syncDate.value;
+
+    var syncDateText = 'Nunca';
+
+    if (date != null) {
+      final formatter = DateFormat('dd/MM/yyyy HH:mm');
+    }
+
     return NavigationDrawer(
+      
       onDestinationSelected: (index) {
         if (index == 1) {
           Modular.to.pop();
           Modular.to.pushNamed(RouteConst.configModule);
         }
       },
+
       children: [
         Padding(
           padding: const EdgeInsets.only(
