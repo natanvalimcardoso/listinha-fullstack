@@ -19,7 +19,8 @@ class CustomDrawerWidget extends StatelessWidget {
     var syncDateText = 'Nunca';
 
     if (date != null) {
-      final formatter = DateFormat('dd/MM/yyyy HH:mm');
+      final formatter = DateFormat('dd/MM/yyyy às hh:mm');
+      syncDateText = formatter.format(date);
     }
 
     return NavigationDrawer(
@@ -46,15 +47,18 @@ class CustomDrawerWidget extends StatelessWidget {
         ),
         NavigationDrawerDestination(
           icon: const Icon(Icons.sync),
-          label: Row(
-            children: [
-              const Text('Sincronizar'),
-              const SizedBox(width: 20),
-              Text(
-                '12/12/2012 às 12:12',
-                style: Theme.of(context).textTheme.bodySmall,
-              ),
-            ],
+          label: SizedBox(
+            width: 210,
+            child: Row(
+              children: [
+                const Text('Sincronizar'),
+                const Spacer(),
+                Text(
+                  syncDateText,
+                  style: Theme.of(context).textTheme.bodySmall,
+                ),
+              ],
+            ),
           ),
         ),
         const NavigationDrawerDestination(
